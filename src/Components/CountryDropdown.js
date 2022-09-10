@@ -3,44 +3,44 @@ import { HouseContext } from "./HouseContext";
 
 function Navbar(props) {
   return (
-    <nav className="navbar">
-      <ul className="navbar-nav">{props.children}</ul>
-    </nav>
+    <div className="navbar">
+      <div className="navbar-nav">{props.children}</div>
+    </div>
   );
 }
 function NavbarItems(props) {
   const [open, setOpen] = useState(false);
-
   return (
-    <li className="nav-item">
+    <div className="nav-item">
       <button onClick={() => setOpen(!open)} className="icon-button">
         {props.country}
       </button>
-      {open && props.children}
-    </li>
+    </div>
   );
 }
 
 const CountryDropdown = () => {
   const { country, setCountry, countries } = useContext(HouseContext);
-
   return (
     <div className="option__title">
       Location
       <Navbar>
         <NavbarItems country={country}>
-          {countries.map((country) => {
-            return (
-              <div className="dropdown">
-                <button
-                  onClick={() => setCountry(country)}
-                  className="dropdown__button"
-                >
-                  {country}
-                </button>
-              </div>
-            );
-          })}
+          {/* {
+            open ? (
+              countries.map((country, index) => {
+                return (
+                  <div className="dropdown" key={index}>
+                    <button
+                      onClick={() => setCountry(country)}
+                      className="dropdown__button"
+                    >
+                      {country}
+                    </button>
+                  </div>
+                );
+              })
+            : (null))} */}
         </NavbarItems>
       </Navbar>
     </div>

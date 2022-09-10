@@ -1,11 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 
-// import icons
-import {
-  RiWallet3Line,
-  RiArrowDownSLine,
-  RiArrowUpSLine,
-} from "react-icons/ri";
 // import headless ui components
 // import context
 import { HouseContext } from "./HouseContext";
